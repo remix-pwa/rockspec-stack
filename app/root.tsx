@@ -13,6 +13,7 @@ import {
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
 import fonts from "./styles/fonts.css";
+import styles from "./styles/root.css";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -22,7 +23,8 @@ export const meta: MetaFunction = () => ({
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: fonts }
+    { rel: "stylesheet", href: fonts },
+    { rel: "stylesheet", href: styles }
   ]
 }
 
