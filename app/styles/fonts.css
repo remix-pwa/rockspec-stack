@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Moderne Sans";
+  src: url("/fonts/ModerneSans/MODERNE_SANS.ttf")  format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mokoto";
+  src: url("/fonts/Mokoto/Mokoto_Glitch.ttf")  format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mokoto";
+  src: url("/fonts/Mokoto/Mokoto_Glitch_Mark.ttf")  format("truetype");
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Mokoto";
+  src: url("/fonts/Mokoto/Mokoto_Glitch_Mark_2.ttf")  format("truetype");
+  font-display: swap;
+  font-weight: 600;
+}
