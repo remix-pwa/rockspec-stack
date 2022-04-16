@@ -12,19 +12,17 @@ import {
 
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
-import fonts from "./styles/fonts.css";
-import styles from "./styles/root.css";
+import tailwind from "./styles/app.css";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "RockSpec Stack",
   viewport: "width=device-width,initial-scale=1",
 });
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: fonts },
-    { rel: "stylesheet", href: styles }
+    { rel: "stylesheet", href: tailwind }
   ]
 }
 
