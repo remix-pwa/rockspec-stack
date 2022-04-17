@@ -4,4 +4,4 @@ node_modules
 /build
 /public/build
 .env
-app/styles/*.css
+app/styles/app.css
