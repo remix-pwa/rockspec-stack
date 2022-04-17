@@ -21,8 +21,11 @@ export default function Index() {
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
-              Check the README.md file for instructions on how to get this
-              project deployed.
+              Check the{" "}
+              <a href="#" className="text-white focus:text-white no-underline">
+                README.md
+              </a>{" "}
+              file for instructions on how to get this project deployed.
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
               <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
@@ -52,7 +55,7 @@ export default function Index() {
         </div>
       </div>
       <section className="absolute bottom-2 w-full text-center">
-        Built by ShafSpecs with ❤️ and Remix vibes 💿
+        Crafted by ShafSpecs with ❤️ and Remix vibes 💿
       </section>
     </div>
   );
