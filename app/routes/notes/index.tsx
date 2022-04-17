@@ -1,5 +1,4 @@
-import { PencilIcon } from "@heroicons/react/solid";
-import { XCircleIcon } from "@heroicons/react/solid";
+import { PencilIcon, XCircleIcon, ShareIcon } from "@heroicons/react/solid";
 import type { LinksFunction } from "@remix-run/node";
 
 import notes from "../../styles/notes.css";
@@ -16,7 +15,8 @@ function Note({ title, content }: any) {
         <p className="note-text mt-2 sm:mt-3 md:mt-4">{content}</p>
         <div className="h-1/5 flex-row text-center content-center justify-center absolute bottom-0 w-full left-0 z-30 hidden" id="menu">
           <PencilIcon className="w-8 h-8 mr-2 md:mr-4 text-gray-600 hover:text-blue-500"/>
-          <XCircleIcon className="w-8 h-8 ml-2 md:ml-4 text-gray-600 hover:text-red-600"/>
+          <XCircleIcon className="w-8 h-8 ml-2 mr-2 md:ml-4 md:mr-4 text-gray-600 hover:text-red-600"/>
+          <ShareIcon className="w-8 h-8 ml-2 md:ml-4 text-gray-600 hover:text-green-400"/>
         </div>
       </a>
     </li>
