@@ -3,7 +3,7 @@ import { Link } from "@remix-run/react";
 export default function Index() {
   return (
     <div className="relative sm:pb-16 sm:pt-8">
-      <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[90rem] sm:px-6 lg:px-8 relative">
         <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
           <section className="absolute inset-0">
             <img
@@ -51,6 +51,9 @@ export default function Index() {
           </section>
         </div>
       </div>
+      <section className="absolute bottom-2 w-full text-center">
+        Built by ShafSpecs with ❤️ and Remix vibes 💿
+      </section>
     </div>
   );
 }
