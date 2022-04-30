@@ -106,7 +106,7 @@ export default function IndexNotes() {
           <NoNote />
         ) : (
           <ul className="note-list">
-            {data.noteListItems.map((note) => (
+            {data.noteListItems.map((note: any) => (
               <Note
                 key={note.id}
                 link={note.id}
