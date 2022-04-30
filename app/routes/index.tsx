@@ -73,7 +73,6 @@ export default function Index() {
                   </Link>
                 </div>
               )}
-              )
             </div>
             <a href="https://remix.run" className="mx-auto w-max">
               <img
