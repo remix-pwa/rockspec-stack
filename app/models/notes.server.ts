@@ -15,12 +15,7 @@ export function getNote({
   });
 }
 
-export function getNoteNonUser({
-  id,
-  userId,
-}: Pick<Note, "id"> & {
-  userId: User["id"];
-}) {
+export function getNoteNonUser({ id }: any) {
   return prisma.note.findFirst({
     where: { id },
   });
