@@ -252,10 +252,7 @@ export default function NoteId() {
       titleRef.current?.focus();
     } else if (actionData?.errors?.body) {
       bodyRef.current?.focus();
-      //@ts-ignore
-    } else if (actionData?.messages) {
-      bodyRef.current?.focus();
-    }
+    } 
   }, [actionData]);
 
   const updateNote = () => {
