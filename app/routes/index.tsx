@@ -94,6 +94,11 @@ export default function Index() {
               href: "https://fly.io",
             },
             {
+              src: "/svgs/pwa-svgrepo-com.svg",
+              alt: "Progressive Web App",
+              href: "https://web.dev/progressive-web-apps/",
+            },
+            {
               src: "https://user-images.githubusercontent.com/1500684/158238105-e7279a0c-1640-40db-86b0-3d3a10aab824.svg",
               alt: "PostgreSQL",
               href: "https://www.postgresql.org/",
@@ -113,11 +118,6 @@ export default function Index() {
               alt: "Cypress",
               href: "https://www.cypress.io",
             },
-            // {
-            //   src: "https://user-images.githubusercontent.com/1500684/157772447-00fccdce-9d12-46a3-8bb4-fac612cdc949.svg",
-            //   alt: "Vitest",
-            //   href: "https://vitest.dev",
-            // },
             {
               src: "https://user-images.githubusercontent.com/1500684/157772662-92b0dd3a-453f-4d18-b8be-9fa6efde52cf.png",
               alt: "Testing Library",
