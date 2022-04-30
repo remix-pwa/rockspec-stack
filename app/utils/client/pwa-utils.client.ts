@@ -1,3 +1,6 @@
+// This was generated from `remix-pwa`
+// https://github.com/ShafSpecs/remix-pwa
+
 /* 
   Project Fugu APIs 
   & 
