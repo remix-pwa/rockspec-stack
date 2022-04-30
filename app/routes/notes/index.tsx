@@ -94,10 +94,12 @@ export default function IndexNotes() {
 
   return (
     <div>
-      <section>
-        <button>
-          New Note
-        </button>
+      <section className="mb-1 mt-1 md:mb-2 md:mt-2 w-full text-center">
+        <Link to="/notes/new">
+          <button className="bg-blue-500 font-semibold text-white border rounded-lg border-transparent py-1 lg:py-[0.325rem] px-1 sm:px-2 lg:px-3">
+            New Note
+          </button>
+        </Link>
       </section>
       <section className="mt-4 sm:mt-7 md:mt-10">
         {data.noteListItems.length == 0 || !data ? (
