@@ -14,7 +14,7 @@ export default function Index() {
 
   typeof loaderData === "string" ? (user = loaderData) : (user = null);
   return (
-    <div className="relative h-full w-full sm:pb-16 sm:pt-8">
+    <div className="relative h-screen w-screen sm:pb-16 sm:pt-8">
       <div className="mx-auto max-w-[90rem] sm:px-6 lg:px-8 relative">
         <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
           <section className="absolute inset-0">
@@ -26,15 +26,15 @@ export default function Index() {
             <div className="absolute inset-0 bg-[color:rgba(27,167,254,0.5)] mix-blend-multiply" />
           </section>
           <section className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
-            <h1 className="text-center text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-8xl">
-              <span className="block uppercase text-blue-500 drop-shadow-md">
-                <span className="font-mokoto-3">Rockspec&nbsp;</span>
-                <span className="font-anxiety">Stack</span>
+            <h1 className="text-center text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-8xl overflow-x-hidden">
+              <span className="block uppercase text-center text-blue-500 drop-shadow-md">
+                <span className="font-mokoto-3 text-center text-[50px] sm:text-6xl lg:text-8xl">Rockspec&nbsp;</span>
+                <span className="font-anxiety block text-center sm:inline">Stack</span>
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
               Check the{" "}
-              <a href="#" className="text-white focus:text-white no-underline">
+              <a href="https://github.com/ShafSpecs/rockspec-stack/blob/main/README.md" target={"_blank"} className="text-white focus:text-white no-underline">
                 README.md
               </a>{" "}
               file for instructions on how to get this project deployed.
@@ -117,6 +117,11 @@ export default function Index() {
               alt: "Cypress",
               href: "https://www.cypress.io",
             },
+            // {
+            //   src: "https://user-images.githubusercontent.com/1500684/157772447-00fccdce-9d12-46a3-8bb4-fac612cdc949.svg",
+            //   alt: "Vitest",
+            //   href: "https://vitest.dev",
+            // },
             {
               src: "https://user-images.githubusercontent.com/1500684/157772662-92b0dd3a-453f-4d18-b8be-9fa6efde52cf.png",
               alt: "Testing Library",
@@ -148,7 +153,7 @@ export default function Index() {
           ))}
         </div>
       </div>
-      <section className="absolute bottom-2 w-full text-center">
+      <section className="md:absolute relative pb-3 mb-2 mt-2 md:mt-0 md:mb-0 md:bottom-2 w-full text-center">
         Crafted by ShafSpecs with ❤️ and Remix vibes 💿
       </section>
     </div>
