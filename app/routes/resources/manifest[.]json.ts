@@ -4,16 +4,28 @@ import type { LoaderFunction } from "@remix-run/node";
 export let loader: LoaderFunction = () => {
   return json(
     {
-      short_name: "PWA",
-      name: "Remix PWA",
+      short_name: "RockSpec",
+      name: "RockSpec Stack",
       start_url: "/",
       display: "standalone",
       background_color: "#d3d7dd",
-      theme_color: "#c34138",
+      theme_color: "#3B82F6",
       shortcuts: [
         {
           name: "Homepage",
           url: "/",
+          icons: [
+            {
+              src: "/icons/android-icon-96x96.png",
+              sizes: "96x96",
+              type: "image/png",
+              purpose: "any monochrome",
+            },
+          ],
+        },
+        {
+          name: "View Notes",
+          url: "/notes",
           icons: [
             {
               src: "/icons/android-icon-96x96.png",
@@ -67,6 +79,6 @@ export let loader: LoaderFunction = () => {
       headers: {
         "Cache-Control": "public, max-age=600",
       },
-    },
+    }
   );
 };

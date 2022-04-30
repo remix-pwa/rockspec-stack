@@ -9,7 +9,7 @@
 */
 
 /**
- * Response Object returned by Client APIs. It serves as a good debugging 
+ * Response Object returned by Client APIs. It serves as a good debugging
  * and error-checking method.
  */
 
@@ -22,7 +22,7 @@ interface ResponseObject {
 
 /**
  * Copies text to the clipboard of the device.
- * 
+ *
  * @typeParam {string} - The text to copy to the device
  * @return {ResponseObject} An object consisting of two properties: A status to indicate the status of the invocation and also an accompanying message.
  */
@@ -48,7 +48,10 @@ export async function copyText(text: string): Promise<ResponseObject> {
 
 // Handle connectivity check and return one of the specifics
 
-export async function checkConnectivity(online: () => void, offline: () => void): Promise<ResponseObject> {
+export async function checkConnectivity(
+  online: () => void,
+  offline: () => void
+): Promise<ResponseObject> {
   try {
     if (navigator.onLine) {
       online();
@@ -203,17 +206,24 @@ interface NotificationOptions {
   silent: boolean | false;
 }
 
-export async function SendNotification(title: string, options: NotificationOptions) {
+export async function SendNotification(
+  title: string,
+  options: NotificationOptions
+) {
   try {
     if ("Notification" in window) {
-      const permissions = await (await navigator.permissions.query({ name: "notifications" })).state;
-      navigator.permissions.query({ name: "notifications" }).then((permissionStatus) => {
-        if (permissionStatus.state === "granted") {
-          return;
-        } else {
-          return Notification.requestPermission();
-        }
-      });
+      const permissions = await (
+        await navigator.permissions.query({ name: "notifications" })
+      ).state;
+      navigator.permissions
+        .query({ name: "notifications" })
+        .then((permissionStatus) => {
+          if (permissionStatus.state === "granted") {
+            return;
+          } else {
+            return Notification.requestPermission();
+          }
+        });
 
       if (permissions === "granted") {
         await navigator.serviceWorker.ready.then((registration) => {
@@ -243,7 +253,10 @@ export async function SendNotification(title: string, options: NotificationOptio
 
 // Page focus
 
-export async function Visibility(isVisible: () => void, notVisible: () => void): Promise<ResponseObject> {
+export async function Visibility(
+  isVisible: () => void,
+  notVisible: () => void
+): Promise<ResponseObject> {
   try {
     if (document.visibilityState) {
       const visibleState = document.visibilityState;
@@ -323,7 +336,11 @@ export async function WebShare(data: any): Promise<ResponseObject> {
 
 // Custom handler to share link to other apps from your app
 
-export async function WebShareLink(url: string, title: string, text: string): Promise<ResponseObject> {
+export async function WebShareLink(
+  url: string,
+  title: string,
+  text: string
+): Promise<ResponseObject> {
   try {
     if (navigator.canShare({ url })) {
       await navigator.share({
@@ -348,7 +365,11 @@ export async function WebShareLink(url: string, title: string, text: string): Pr
 
 // Special Web Share API for sharing files to your App.
 
-export async function WebShareFile(title: string, data: any[], text: string): Promise<ResponseObject> {
+export async function WebShareFile(
+  title: string,
+  data: any[],
+  text: string
+): Promise<ResponseObject> {
   let filesArray = [...data];
   try {
     if (navigator.canShare && navigator.canShare({ files: filesArray })) {

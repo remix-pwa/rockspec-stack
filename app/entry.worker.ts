@@ -148,7 +148,7 @@ async function handleFetch(event: FetchEvent): Promise<Response> {
 }
 
 const handlePush = (event: PushEvent) => {
-  const data = JSON.parse(event?.data!.text())
+  const data = JSON.parse(event?.data!.text());
   const title = data.title ? data.title : "Remix PWA";
 
   const options = {
@@ -157,8 +157,8 @@ const handlePush = (event: PushEvent) => {
     badge: data.badge ? data.badge : "/icons/android-icon-48x48.png",
     dir: data.dir ? data.dir : "auto",
     image: data.image ? data.image : undefined,
-    silent: data.silent ? data.silent : false, 
-  }
+    silent: data.silent ? data.silent : false,
+  };
 
   self.registration.showNotification(title, {
     ...options,
@@ -199,11 +199,11 @@ self.addEventListener("message", (event) => {
 
 self.addEventListener("push", (event) => {
   // self.clients.matchAll().then(function (c) {
-    // if (c.length === 0) {
-      event.waitUntil(handlePush(event));
-    // } else {
-    //   console.log("Application is already open!");
-    // }
+  // if (c.length === 0) {
+  event.waitUntil(handlePush(event));
+  // } else {
+  //   console.log("Application is already open!");
+  // }
   // });
 });
 
