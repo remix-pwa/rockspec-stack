@@ -22,7 +22,8 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   const userId = (await getUserId(request)) as string;
   const { preview } = params;
   //@ts-ignore
-  const note = await getNoteNonUser({ userId, preview });
+  const note = await getNoteNonUser({ id: params.preview });
+  console.log(note);
 
   if (!note) {
     throw new Response("Not Found", { status: 404 });
@@ -53,6 +54,7 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 
 export default function Preview() {
   const data = useLoaderData();
+  console.log(data)
 
   return (
     <div className="h-screen w-screen relative flex content-center justify-center">
