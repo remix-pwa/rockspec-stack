@@ -52,6 +52,7 @@
   "devDependencies": {
     "@remix-run/dev": "*",
     "@remix-run/eslint-config": "*",
+    "@remix-run/server-runtime": "*",
     "@testing-library/cypress": "^8.0.2",
     "@types/bcryptjs": "^2.4.2",
     "@types/eslint": "^8.4.1",
