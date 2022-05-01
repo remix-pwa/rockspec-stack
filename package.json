@@ -19,6 +19,7 @@
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "prisma": "prisma migrate dev && prisma generate",
     "push-keys": "web-push generate-vapid-keys [--json]",
+    "seed": "npx prisma db seed",
     "start": "remix-serve build"
   },
   "prettier": {},
@@ -61,6 +62,7 @@
     "@types/react-dom": "^17.0.9",
     "autoprefixer": "^10.4.4",
     "cypress": "^9.6.0",
+    "esbuild-register": "^3.3.2",
     "eslint": "^8.11.0",
     "postcss": "^8.4.12",
     "prisma": "^3.13.0",
@@ -69,5 +71,8 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "prisma": {
+    "seed": "node -r esbuild-register prisma/seed.ts"
   }
 }
