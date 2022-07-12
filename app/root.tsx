@@ -24,11 +24,12 @@ export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwind }];
 };
 
+let isMount = true;
+
 export default function App() {
   let location = useLocation();
   let matches = useMatches();
 
-  let isMount = true;
   React.useEffect(() => {
     let mounted = isMount;
     isMount = false;
@@ -136,7 +137,7 @@ export default function App() {
           sizes="16x16"
           href="/icons/favicon-16x16.png"
         />
-        <link rel="manifest" href="/resources/manifest.json" />
+        <link rel="manifest" href="/resources/manifest.webmanifest" />
         <Links />
       </head>
       <body className="m-0 p-0 h-screen">
