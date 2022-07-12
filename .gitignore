@@ -1,9 +1,27 @@
+# Node Modules
 node_modules
 
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+pnpm-lock.yml
+
+# Cache & Build files
 /.cache
 /build
 /public/build
+/public/entry.worker.js
+
+# Environment Variable files
 .env
+
+# Generated Tailwind stylesheets
 app/styles/app.css
+
+# Server-side LocalStorage file
 /.node-persist
 /node-persist
+
+# Database generated data
+/postgres-data/

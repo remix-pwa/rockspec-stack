@@ -1,25 +1,26 @@
 {
-  "name": "remix-template-fly",
+  "name": "rockspec-stack",
   "private": true,
   "description": "",
   "license": "",
   "sideEffects": false,
   "scripts": {
-    "build": "npm-run-all -p build:*",
-    "deploy": "fly deploy --remote-only",
-    "push-keys": "web-push generate-vapid-keys [--json]",
-    "format": "prettier --write .",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
-    "postinstall": "remix setup node",
-    "prisma": "prisma migrate dev && prisma generate",
-    "dev": "npm-run-all -p dev:*",
-    "start": "remix-serve build",
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
-    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
     "build:remix": "cross-env NODE_ENV=production remix build",
     "build:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --minify --bundle --format=esm --define:process.env.NODE_ENV='\"production\"'",
+    "build": "npm-run-all -s build:*",
+    "deploy": "fly deploy --remote-only",
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
     "dev:remix": "cross-env NODE_ENV=development remix dev",
-    "dev:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --bundle --format=esm --define:process.env.NODE_ENV='\"development\"' --watch"
+    "dev:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --bundle --format=esm --define:process.env.NODE_ENV='\"development\"' --watch",
+    "dev": "npm run docker && npm-run-all -p dev:*",
+    "docker": "docker-compose up -d",
+    "format": "prettier --write .",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "prisma": "prisma migrate dev && prisma generate",
+    "push-keys": "web-push generate-vapid-keys [--json]",
+    "seed": "npx prisma db seed",
+    "start": "remix-serve build"
   },
   "prettier": {},
   "eslintIgnore": [
@@ -31,9 +32,9 @@
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@prisma/client": "^3.13.0",
-    "@remix-run/node": "^1.4.0",
-    "@remix-run/react": "^1.4.0",
-    "@remix-run/serve": "^1.4.0",
+    "@remix-run/node": "*",
+    "@remix-run/react": "*",
+    "@remix-run/serve": "*",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1",
@@ -50,8 +51,9 @@
     "web-push": "^3.4.5"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.4.0",
-    "@remix-run/eslint-config": "^1.4.0",
+    "@remix-run/dev": "*",
+    "@remix-run/eslint-config": "*",
+    "@remix-run/server-runtime": "*",
     "@testing-library/cypress": "^8.0.2",
     "@types/bcryptjs": "^2.4.2",
     "@types/eslint": "^8.4.1",
@@ -61,6 +63,7 @@
     "@types/react-dom": "^17.0.9",
     "autoprefixer": "^10.4.4",
     "cypress": "^9.6.0",
+    "esbuild-register": "^3.3.2",
     "eslint": "^8.11.0",
     "postcss": "^8.4.12",
     "prisma": "^3.13.0",
@@ -69,5 +72,8 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "prisma": {
+    "seed": "node -r esbuild-register prisma/seed.ts"
   }
 }
