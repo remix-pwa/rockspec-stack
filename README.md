@@ -1,6 +1,6 @@
 # Remix RockSpec Stack
 
-> **This stack is getting updated to something big, gonna take a while though 💅. In the meantime, check out other stacks!**
+> Deprecated
 
 ![The Remix RockSpec Stack](https://github.com/ShafSpecs/rockspec-stack-example/blob/main/public/images/rockspec-image.png)
 
